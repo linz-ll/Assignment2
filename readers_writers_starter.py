@@ -185,7 +185,8 @@ def main() -> None:
     
     #TODO: Create at least 2 writer threads.
     writers = [
-        Writer(writer_id=1, monitor=monitor)
+        Writer(writer_id=1, monitor=monitor),
+        Writer(writer_id=2, monitor=monitor)
     ]
 
     all_threads = readers + writers
