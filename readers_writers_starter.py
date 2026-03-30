@@ -114,7 +114,10 @@ class ReadersWritersMonitor:
         """
         with self.condition:
             # TODO: Replace 'pass' with your logic
-            pass
+            self.active_writers -= 1
+            print(f"Writer {writer_id} stops writing")
+
+            self.condition.notify_all()
 
 # Donot Change this
 class Reader(threading.Thread):
